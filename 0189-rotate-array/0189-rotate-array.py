@@ -11,12 +11,8 @@ class Solution(object):
             return nums
         if k > n:
             k = k % n
-        for i in range(n - k, n):
-            ans.append(nums[i])
-        for i in range(0, n - k):
-            ans.append(nums[i])
-        nums[:] = ans
-
+        nums[:] = nums[n - k : n ] + nums[ : n - k]
+    
         
 
 

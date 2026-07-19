@@ -1,0 +1,24 @@
+class Solution(object):
+    def pivotIndex(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        n = len(nums)
+        total = sum(nums)
+        left = 0
+        for i in range(n):
+            right =  total - left - nums[i]
+            if left == right:
+                return i
+            left += nums[i]
+        return -1
+
+            
+                
+
+
+
+# Synced seamlessly with LeetHub Pro
+# Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
+# Get it here: https://chromewebstore.google.com/detail/bcilpkkbokcopmabingnndookdogmbna
